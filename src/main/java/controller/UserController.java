@@ -1,4 +1,4 @@
-package controllers;
+package controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -51,15 +51,15 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/{id}/edit_user")
-    public String editUserForm(ModelMap model, @PathVariable("id") int id) {
+    @GetMapping("/edit_user")
+    public String editUserForm(@RequestParam("id") int id, ModelMap model) {
         model.addAttribute("user", userService.getUser(id));
         return "edit_user";
     }
 
-    @PutMapping("/{id}")
-    public String editUser(@ModelAttribute("user") User user,
-                           BindingResult bindingResult, @PathVariable("id") int id) {
+    @PutMapping("/edit_user")
+    public String editUser(@RequestParam("id") int id, @ModelAttribute("user") User user,
+                           BindingResult bindingResult) {
         if (bindingResult.hasErrors())
             return "/edit_user";
         userService.updateUser(id, user);

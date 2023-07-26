@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>User</title>
+    <h1>User:</h1>
 </head>
 <body>
-<h1>User:</h1>
 <h2>
     <p th:text="'ID:    ' + ${user.getId()}">VALUE</p>
     <p th:text="'Name:    ' + ${user.getFirstName()}">VALUE</p>
@@ -15,7 +15,7 @@
 <br>
 <hr>
 <div>
-    <a th:href="@{/{id}/edit(id=${user.getId()})}">
+    <a th:href="@{/edit_user(id=${user.getId()})}">
         <input type="button" value="EDIT USER"/>
     </a>
     <br>
