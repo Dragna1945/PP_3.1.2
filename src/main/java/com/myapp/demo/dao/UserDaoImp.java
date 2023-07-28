@@ -1,9 +1,9 @@
-package dao;
+package com.myapp.demo.dao;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
-import model.User;
+import com.myapp.demo.model.User;
 
 
 import java.util.List;
